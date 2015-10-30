@@ -23,7 +23,7 @@ class ActorsController < ApplicationController
   end
 
   def edit_form
-    @actor = Actor.find(params[:id])
+    @actor = Actor.find_by({ :id => params[:id]})
   end
 
   def update_row
