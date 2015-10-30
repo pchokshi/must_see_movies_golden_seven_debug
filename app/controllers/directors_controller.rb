@@ -4,7 +4,7 @@ class DirectorsController < ApplicationController
   end
 
   def show_details
-    @directors = Director.find_by({ :id => params[:id]})
+    @director = Director.find_by({ :id => params[:id]})
   end
 
   def new_form
@@ -19,7 +19,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    redirect_to("http://localhost:3000/directors")
+    render ("show_details")
   end
 
   def edit_form
@@ -36,7 +36,7 @@ class DirectorsController < ApplicationController
 
     @director.save
 
-    redirect_to("http://localhost:3000/directors")
+    render ("show_details")
   end
 
   def destroy
